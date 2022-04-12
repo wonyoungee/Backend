@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        /*
+         1. XMLHttpRequest 객체 얻기
+	     2. onreadystatechange 이벤트 핸들러 구현 (함수)
+	     3. 요청 정보 ( open() )
+	     4. 요청 보내기 (send() )
+	     5. 응답 처리 (Text(JSON, script, css, html, text), xml )
+         */
+
+        let httpReq = null;
+        function getInstance() {
+            if (window.XMLHttpRequest) {
+                httpReq = new XMLHttpRequest(); //현재 브라우져 XMLHttpRequest 내장
+            } else if (window.ActiveXObject) { //IE6 이하   //지금 필요없어요
+                httpReq = new ActiveXObject("Msxml2.XMLHTTP");
+            } else {
+                throw new Error("AJAX 지원하지 않습니다");
+            }
+            return httpReq;
+        }
+
+        function handlerStateChange() {
+            if (httpReq.readyState == 4) {  //1. 서버에서 응답이 왔다면
+                if (httpReq.status >= 200 && httpReq.status < 300) {
+                    //2. 서버에서 응답이 왔고  상태가 정상적인 (200~299)
+
+                    /* 가공코드 */
+                    console.log(httpReq.responseText);
+
+                    // a,b,c
+                    //가,나,다
+                    //배열에...
+                    let tempArray = [];
+                    tempArray = httpReq.responseText.split(",");
+
+                    let printdata = "";
+                    for (let i = 0; i < tempArray.length; i++) {
+                        printdata += tempArray[i] + "<br>";
+                    }
+
+                    document.getElementById("div_view").innerHTML = printdata;
+                    //가공은 여러분이 원하는 대로 ...
+                } else {
+                    alert("status Text : " + httpReq.status);
+                }
+            }
+        }
+
+        function sendData() {
+            httpReq = getInstance();
+            httpReq.onreadystatechange = handlerStateChange;    // () 없이 함수 이름만
+            let key = document.getElementById("select_menu").selectedIndex;
+            httpReq.open("POST", "WebForm_03.aspx?no=" + key);    // 요청 준비
+            httpReq.send(); //전송
+        }
+
+        // localhost:port번호/WebForm_03.aspx?no=0
+        // localhost:port번호/WebForm_03.aspx?no=0
+        // localhost:port번호/WebForm_03.aspx?no=0
+
+    </script>
+</head>
+<body>
+    <h3>Ajax param 값 처리하기</h3>
+    <div style="background-color:gray; width:500px; text-align:center">
+        <hr style="color:red"/>
+        <select id="select_menu" onchange="sendData()">
+            <option>0번 index</option>
+            <option>1번 index</option>
+            <option>2번 index</option>
+        </select>
+    </div>
+    <span id="div_view"></span>
+</body>
+</html>

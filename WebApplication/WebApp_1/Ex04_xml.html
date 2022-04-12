@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        /*
+         1. XMLHttpRequest 객체 얻기
+	     2. onreadystatechange 이벤트 핸들러 구현 (함수)
+	     3. 요청 정보 ( open() )
+	     4. 요청 보내기 (send() )
+	     5. 응답 처리 (Text(JSON, script, css, html, text), xml )
+         */
+
+        let httpReq = null;
+        function getInstance() {
+            if (window.XMLHttpRequest) {
+                httpReq = new XMLHttpRequest(); //현재 브라우져 XMLHttpRequest 내장
+            } else if (window.ActiveXObject) { //IE6 이하   //지금 필요없어요
+                httpReq = new ActiveXObject("Msxml2.XMLHTTP");
+            } else {
+                throw new Error("AJAX 지원하지 않습니다");
+            }
+            return httpReq;
+        }
+
+        function handlerStateChange() {
+            if (httpReq.readyState == 4) { 
+                if (httpReq.status >= 200 && httpReq.status < 300) {
+                    //  데이터 가공
+                    console.log(httpReq.responseXML);
+
+                    let xmlDoc = httpReq.responseXML;
+                    txt = "";
+
+                    let artistdata = xmlDoc.getElementsByTagName("ARTIST");
+                    console.log(artistdata);    // array 배열 형태
+                    // [<ARTIST>Bob Dylan</ARTIST>][][][][]
+
+                    //마음대로
+                    for (let i = 0; i < artistdata.length; i++) {
+                        console.log(artistdata[i].childNodes[0]);
+                        txt = txt + artistdata[i].childNodes[0].nodeValue + "<br>";
+                    }
+                    //console.log(txt);
+                    document.getElementById("demo").innerHTML = txt;
+                } else {
+                    alert("status Text : " + httpReq.status);
+                }
+            }
+        }
+
+        function sendData() {
+            httpReq = getInstance();
+            httpReq.onreadystatechange = handlerStateChange;    // () 없이 함수 이름만
+            httpReq.open("GET", "Ex04_cd.xml");    // 요청 준비
+            httpReq.send(); //전송
+        }
+
+    </script>
+</head>
+<body>
+    <h3>비동기 xml 데이터 호출</h3>
+    <button onclick="sendData()">비동기호출</button>
+
+</body>
+</html>
