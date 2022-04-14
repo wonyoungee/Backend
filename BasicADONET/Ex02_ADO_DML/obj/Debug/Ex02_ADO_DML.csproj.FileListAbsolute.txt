@@ -1,0 +1,11 @@
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\bin\Debug\Ex02_ADO_DML.exe.config
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\bin\Debug\Ex02_ADO_DML.exe
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\bin\Debug\Ex02_ADO_DML.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\obj\Debug\Ex02_ADO_DML.csproj.AssemblyReference.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\obj\Debug\Ex02_ADO_DML.csproj.SuggestedBindingRedirects.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\obj\Debug\Ex02_ADO_DML.csproj.CoreCompileInputs.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\obj\Debug\Ex02_ADO_DML.exe
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\obj\Debug\Ex02_ADO_DML.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\bin\Debug\DBCONNLIB.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\obj\Debug\Ex02_ADO_DML.csproj.CopyComplete
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex02_ADO_DML\bin\Debug\DBCONNLIB.pdb

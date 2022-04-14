@@ -1,0 +1,6 @@
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\DBCONNLIB\bin\Debug\DBCONNLIB.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\DBCONNLIB\bin\Debug\DBCONNLIB.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\DBCONNLIB\obj\Debug\DBCONNLIB.csproj.AssemblyReference.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\DBCONNLIB\obj\Debug\DBCONNLIB.csproj.CoreCompileInputs.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\DBCONNLIB\obj\Debug\DBCONNLIB.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\DBCONNLIB\obj\Debug\DBCONNLIB.pdb

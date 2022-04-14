@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /*
+          <무식하게 하는 방법>
+          
+          1.
+          $.post("Ex09.aspx?name=hong&pwd=1004") ..... (x)
+          
+          2.
+          let name = $('#name').val();
+          let pwd = $('#pwd').val();
+          let param = 'name='+name+'&pwd='+pwd;
+          $.post("Ex09.aspx, param, ...");
+         
+         <권장방법> - parameter를 json으로!!     (ok)
+          const data = {"name":$('name').val(), "pwd":$('#pwd').val()}
+        
+        */
+
+        $(function () {
+            $('#btn').click(function () {
+                const data = { "name": $('#name').val(), "pwd": $('#pwd').val() }
+                $.post("WebForm_09.aspx", data, function (responsedata) {
+                    $('#message').html(responsedata);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    이름 : <input type="text" id="name" /><br />
+    비번 : <input type="text" id="pwd" /><br />
+    <input type="button" id="btn" value="비동기 전송" />
+    <hr />
+    <div id="message"></div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\bin\Debug\EmpDao.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\bin\Debug\EmpDao.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\bin\Debug\DBCONNLIB.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\bin\Debug\DBCONNLIB.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\obj\Debug\EmpDao.csproj.AssemblyReference.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\obj\Debug\EmpDao.csproj.CoreCompileInputs.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\obj\Debug\EmpDao.csproj.CopyComplete
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\obj\Debug\EmpDao.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\EmpDao\obj\Debug\EmpDao.pdb

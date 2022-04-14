@@ -1,0 +1,11 @@
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\bin\Debug\Ex03_ADO_Scalar.exe.config
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\bin\Debug\Ex03_ADO_Scalar.exe
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\bin\Debug\Ex03_ADO_Scalar.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\bin\Debug\DBCONNLIB.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\obj\Debug\Ex03_ADO_Scalar.csproj.AssemblyReference.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\obj\Debug\Ex03_ADO_Scalar.csproj.SuggestedBindingRedirects.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\obj\Debug\Ex03_ADO_Scalar.csproj.CoreCompileInputs.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\obj\Debug\Ex03_ADO_Scalar.csproj.CopyComplete
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\obj\Debug\Ex03_ADO_Scalar.exe
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\obj\Debug\Ex03_ADO_Scalar.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex03_ADO_Scalar\bin\Debug\DBCONNLIB.pdb

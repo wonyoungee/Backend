@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /*
+         * jQuery가 제공하는 비동기 함수(ajax)
+         
+         * jQuery 비동기 함수는 내부적으로 : XMLHttpRequest 객체를 구현하고 있다.
+         
+         * jQuery가 제공하는 비동기 함수
+            Global Ajax Event Handlers  (Ajax 함수 사용시 공통적으로 사용되는 이벤트 처리)  -10% 사용
+            Helper Functions    -10% 사용
+            Low-Level Interface (옵션을 개발자가 직접 제어)    >> 대표적 함수 : $.ajax()    -30% 사용
+            Shorthand Methods   (Load data from the server and place the returned HTML into the matched elements.)
+                                                  기본 옵션을 가지고 있는 함수  >>  load(), get(), post()   -50% 사용
+                                                  
+                                                  $( "#result" ).load( "ajax/test.html" );
+                                                  .load(url [, data] [, complete])
+                                                    
+                                                    [url] - 서버 주소
+                                                    Type: String
+                                                    A string containing the URL to which the request is sent.
+                                                    
+                                                    [data]
+                                                    Type: PlainObject or String
+                                                    A plain object or string that is sent to the server with the request.
+                                                    
+                                                    [complete]
+                                                    Type: Function( String responseText, String textStatus, jqXHR jqXHR )
+                                                    A callback function that is executed when the request completes.
+
+                                                  * 정리 : load()함수
+                                                  * 1. 서버에서 받은 데이터 형식 (html, text)을 뿌림
+                                                  * 2. Client 정한 특정요소에 자동으로 맵핑할 목적 (자동으로 innerHTML 실행)
+                                                  
+                                                  [data] -두번째 parameter
+                                                  aspx?msg=hello&name=hong
+
+                                                  parameter 객체 설정(json)
+                                                  {msg: "hello", name: "hong"}
+                                                  ?msg=hello&name=hong      >> 자동으로 parameter 설정
+
+                                                    [complete] >> callback함수
+                                                    >> readyState가 4일때 호출됨
+                                                    function(String responseData, String ..., XMLHttpRequest의 객체 주소) {}
+         */
+        $(function () {
+            $('#btn').click(function () {
+                $('#display').load("WebForm_06.aspx", { "msg": $('#msg2').val() },
+                    function (responseText, textStatus, xhr) {
+                        // readyState가 4라면
+                        // responseText 서버가 응답한 결과는 (html or text)
+                        // textStatus (success or fail)
+                        // Status code (200 or 300 or 404 or 500)
+                        if (textStatus == "success") {
+                            // 응답이 4, status code가 200이라면..
+
+                        } else {
+                            // 응답 4, status conde : 404, 500 이라면...
+                            console.log("response fail : " + xhr.status + " , " + xhr.status);
+                        }
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>동기처리</h3>
+    <div>
+        <form action="WebForm_06.aspx" method="get">
+            <input type="text" name="msg" id="msg" />
+            <input type="submit" value="동기식 전송" />
+        </form>
+    </div>
+
+    <h3>비동기처리</h3>
+    <input type="text" name="msg2" id="msg2" />
+    <input type="button" id="btn" value="비동기 전송" />
+
+    <div id="display"></div>
+</body>
+</html>

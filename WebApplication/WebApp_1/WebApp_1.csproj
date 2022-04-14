@@ -73,6 +73,14 @@
     <Content Include="Ex03_xmlhttprequest_param.html" />
     <Content Include="Ex04_cd.xml" />
     <Content Include="Ex04_xml.html" />
+    <Content Include="Ex05_xmlhttprequest_Emp.html" />
+    <Content Include="Ex06_jQuery_load.html" />
+    <Content Include="Ex09_jQuery_post.html" />
+    <Content Include="Ex10_jQuery_getjson.html" />
+    <Content Include="Ex11_Extend_API_ajax.html" />
+    <Content Include="Ex12_jQuery_Ajax_Board.html" />
+    <Content Include="HW_JSON_API.html" />
+    <Content Include="HW_JSON_API_movie.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
@@ -82,8 +90,12 @@
     <Content Include="images\lasvegas.jpg" />
     <Content Include="Web.config" />
     <Content Include="WebForm_03.aspx" />
+    <Content Include="WebForm_06.aspx" />
+    <Content Include="WebForm_09.aspx" />
     <Content Include="WebForm_ado.aspx" />
+    <Content Include="WebForm_DB_JSON.aspx" />
     <Content Include="WebForm_Request.aspx" />
+    <Content Include="WebFrom_JSON.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,12 +106,33 @@
     <Compile Include="WebForm_03.aspx.designer.cs">
       <DependentUpon>WebForm_03.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm_06.aspx.cs">
+      <DependentUpon>WebForm_06.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm_06.aspx.designer.cs">
+      <DependentUpon>WebForm_06.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm_09.aspx.cs">
+      <DependentUpon>WebForm_09.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm_09.aspx.designer.cs">
+      <DependentUpon>WebForm_09.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm_ado.aspx.cs">
       <DependentUpon>WebForm_ado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm_ado.aspx.designer.cs">
       <DependentUpon>WebForm_ado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm_DB_JSON.aspx.cs">
+      <DependentUpon>WebForm_DB_JSON.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm_DB_JSON.aspx.designer.cs">
+      <DependentUpon>WebForm_DB_JSON.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm_Request.aspx.cs">
       <DependentUpon>WebForm_Request.aspx</DependentUpon>
@@ -108,8 +141,17 @@
     <Compile Include="WebForm_Request.aspx.designer.cs">
       <DependentUpon>WebForm_Request.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFrom_JSON.aspx.cs">
+      <DependentUpon>WebFrom_JSON.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFrom_JSON.aspx.designer.cs">
+      <DependentUpon>WebFrom_JSON.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ex10_json.json" />
+    <Content Include="Ex12_Ajax_Board.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

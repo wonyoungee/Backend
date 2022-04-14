@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // http://api.flickr.com/services/feeds/photos_public.gne?tags=raccoon&tagmode=any&format=json&jsoncallback=?
+        //tags=raccoon&tagmode=any&format=json      >>  조작가능
+
+        $(function () {
+            $('#btn').click(function () {
+                let flickrAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+                let data = { tags: $('#search').val(), tagmode: "any", format: "json" };
+
+                $.getJSON(flickrAPI, data, function (data, textStatus, xhr) {
+                    //console.log(data);
+                    //console.log(textStatus);    // success
+                    //console.log(xhr.readyState);    // 4
+
+                    $('#images').empty();   // div태그 내용 비움
+                    $.each(data.items, function (index, obj) {
+                        $('<img>').attr("src", obj.media.m).appendTo("#images");
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="search" />
+    <input type="button" value="검색하기" id="btn" />
+    <hr />
+    <div id="images"></div>
+</body>
+</html>

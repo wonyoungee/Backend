@@ -1,0 +1,13 @@
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\bin\Debug\Ex06_ADO_PROC_LIB.exe.config
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\bin\Debug\Ex06_ADO_PROC_LIB.exe
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\bin\Debug\Ex06_ADO_PROC_LIB.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\obj\Debug\Ex06_ADO_PROC_LIB.csproj.AssemblyReference.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\obj\Debug\Ex06_ADO_PROC_LIB.csproj.SuggestedBindingRedirects.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\obj\Debug\Ex06_ADO_PROC_LIB.csproj.CoreCompileInputs.cache
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\obj\Debug\Ex06_ADO_PROC_LIB.exe
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\obj\Debug\Ex06_ADO_PROC_LIB.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\bin\Debug\EmpDao.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\bin\Debug\DBCONNLIB.dll
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\bin\Debug\EmpDao.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\bin\Debug\DBCONNLIB.pdb
+C:\Users\mimiy\Desktop\Ecount\Backend\BasicADONET\Ex06_ADO_PROC_LIB\obj\Debug\Ex06_ADO_PROC_LIB.csproj.CopyComplete
