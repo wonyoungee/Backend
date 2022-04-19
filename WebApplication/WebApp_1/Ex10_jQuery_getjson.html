@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /*
+            jQuery.getJSON(url [, data] [, success])
+            default 옵션은
+            서버가 응답하는 data 형식 : json
+
+            $.ajax({
+                dataType : "json", 이부분 ...
+                url : url,
+                data : data,
+                success : success
+            });
+
+         */
+
+        $(function () {
+            $('#btn .btnload').click(function () {
+                $.getJSON("Ex10_json.json", function (data) {
+                    //console.log(data);
+
+                    $.each(data, function (index, obj) {
+                        console.log(obj.num);
+                        console.log(obj.Name);
+                    });
+                });    // 서버한테 요청하는 data
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="btn">
+        <div class="btnload">JSON DATA LOAD</div>
+    </div>
+    <div id="display"></div>
+</body>
+</html>

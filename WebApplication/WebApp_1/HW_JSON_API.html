@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        .limiter {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .container-table100 {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #4158d0;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 33px 30px;
+        }
+
+        .wrap-table100 {
+            width: 1000px;
+        }
+
+        table {
+            border-spacing: 1;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+            table * {
+                position: relative;
+            }
+
+            table td, table th {
+                padding-left: 8px;
+            }
+
+            table thead tr {
+                height: 60px;
+                background: #36304a;
+            }
+
+            table tbody tr {
+                height: 50px;
+            }
+
+                table tbody tr:last-child {
+                    border: 0;
+                }
+
+            table td, table th {
+                text-align: left;
+            }
+
+                table td.l, table th.l {
+                    text-align: right;
+                }
+
+                table td.c, table th.c {
+                    text-align: center;
+                }
+
+                table td.r, table th.r {
+                    text-align: center;
+                }
+
+
+        .table100-head th {
+            font-family: OpenSans-Regular;
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.2;
+            font-weight: unset;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        tbody tr {
+            font-family: OpenSans-Regular;
+            font-size: 15px;
+            color: #808080;
+            line-height: 1.2;
+            font-weight: unset;
+        }
+
+            tbody tr:hover {
+                color: #555555;
+                background-color: #f5f5f5;
+                cursor: pointer;
+            }
+
+        .column1 {
+            width: 70%;
+            padding-left: 30px;
+        }
+
+        .column2 {
+            width: 15%;
+        }
+
+        .column3 {
+            width: 15%;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let api = "https://apis.data.go.kr/1250000/tvprgm/getTvprgm?ServiceKey=%2B4ZpE0GnRsyoDHemvaT%2FJLY1nfpTKnntl43zJmneQ3nnxYrD1I%2FrXhYbPaNn28G1La8xcFUDGz4Lc%2BKYY6kSyw%3D%3D&%20";
+            let data = { pageNo: "1", numOfRows: "100", bgng_ymd: "20210101", end_ymd: "20220406", bgng_time: "1200", end_time: "1800" };
+
+            $.getJSON(api, data, function (data, textStatus, xhr) {
+                $('#target').empty();
+                $.each(data.items, function (i, member) {
+                    var add_data = '';
+                    add_data += '<tr>';
+
+                    add_data += '<td class="column1">';
+                    add_data += member.sj;
+                    add_data += '</td>';
+
+                    add_data += '<td class="column2">';
+                    add_data += member.frmtn_time;
+                    add_data += '</td>';
+
+                    add_data += '<td class="column3">';
+                    add_data += member.frmtn_ymd;
+                    add_data += '</td>';
+
+                    add_data += '<tr>';
+
+                    $('#target').append(add_data);
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">제목</th>
+                                <th class="column2">상영시간</th>
+                                <th class="column3">상영일</th>
+                            </tr>
+                        </thead>
+                        <tbody id="target">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
