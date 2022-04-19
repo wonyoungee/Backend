@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*
+    <!--뷰백에 담아왔을때-->
+    <h3>사용자 번호 :  @ViewBag.User.UserNo</h3>
+    <h3>사용자 이름 : @ViewBag.User.UserName</h3>
+*@
+
+<!--뷰백에 담지않고 뷰의 파라미터로 보냈을때-->
+<h3>사용자 번호 :  @Model.UserNo</h3>
+<h3>사용자 이름 : @Model.UserName</h3>

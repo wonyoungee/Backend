@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!--Razor 문법-->
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>HelloWorld Index Page</h3>
+<p>@ViewBag.Title</p>
+
+
+
+
+@*
+     요청을 비동기 처리
+     //  http://localhost:49779/HelloWorld/ajaxMethod?name=kglim
+    // {"Name":"kglim","DateTime":"2022-04-19 오후 12:08:57"} 받아서 화면 출력..
+
+    레이저 문법 주석 - 클라이언트 랜더링 X - 소스보기하면 안보임.
+        jQuery ajax 함수 사용하여 ajaxMethod 부르기
+        /HelloWorld/ajaxMethod
+        parameter name = ""
+        <input type="text" id="txtName">
+        <input type="button" id="btn">
+        <div ...>
+         비동기 요청
+
+        리턴된 값은 화면 출력 ... console.log()
+
+*@
+
+<input type="text" id="txtName" />
+<input type="button" id="btnGet" value="Get Current Time" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnGet").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "/HelloWorld/ajaxMethod",
+                data: '{name: "' + $("#txtName").val() + '" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    alert("Hello " + response.Name + " .\nCurrent Date and Time: " + response.DateTime);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+    });
+</script>
