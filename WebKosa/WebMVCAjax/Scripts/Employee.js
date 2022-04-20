@@ -19,7 +19,7 @@ function loadData() {   // 데이터 조회
                     html += "<td>" + item.Age + "</td>";
                     html += "<td>" + item.State + "</td>";
                     html += "<td>" + item.Country + "</td>";
-                    html += "<td><a href=# onclick=''>EDIT</a></td>";
+                    html += '<td><a href="#" onclick="return getbyID(' + item.EmployeeID + ')">Edit</a> | <a href="#" onclick="Delete(' + item.EmployeeID + ')">Delete</a></td>';
                     html += "</tr>";
                 });
                 $('.tbody').html(html);
@@ -30,6 +30,34 @@ function loadData() {   // 데이터 조회
         }
     );
 }
+
+function getbyID(EmpID) {
+    $.ajax(
+        {
+            url: "/Home/GetbyID/" + EmpID,      // Home/GetbyID/1    가능     >>  RouteConfig에 url: "{controller}/{action}/{id}" 로 돼있으므로..
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                //console.log(result);
+                $('#EmployeeID').val(result.EmployeeID);
+                $('#Name').val(result.Name);
+                $('#Age').val(result.Age);
+                $('#State').val(result.State);
+                $('#Country').val(result.Country);
+
+                $('#myModal').modal('show');
+                $('#btnUpdate').show();
+                $('#btnAdd').hide();
+            },
+            error: function (errmsg) {
+                alert(errmsg.responseText);
+            }
+
+        }
+    );
+}
+
 
 function Add() {
     let res = validate();
@@ -53,8 +81,7 @@ function Add() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (result) {
-                //loadData(); // 다시 비동기 조회 함수 호출
-                console.log(result);
+                loadData(); // 다시 비동기 조회 함수 호출
                 $('#myModal').modal('hide');
             },
             error: function (errmsg) {
@@ -65,11 +92,60 @@ function Add() {
 }
 
 function Update() {
-    $.ajax();
+    let res = validate();   // validate : 값 채워있는지 비어있는지
+    if (res == false) { // 값이 비어있으면
+        return false;
+    }
+
+    let empobj = {
+        employeeid: $('#EmployeeID').val(),
+        name: $('#Name').val(),
+        age: $('#Age').val(),
+        state: $('#State').val(),
+        country: $('#Country').val()
+    };
+
+    $.ajax(
+        {
+            url: "/Home/Update",   // 서버쪽에 요청
+            data: JSON.stringify(empobj),    // HomeController의 Update()가 받음
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                loadData(); // 다시 비동기 조회 함수 호출
+                $('#myModal').modal('hide');
+                $('#EmployeeID').val("");
+                $('#Name').val("");
+                $('#Age').val("");
+                $('#State').val("");
+                $('#Country').val("");
+            },
+            error: function (errmsg) {
+                alert(errmsg.responseText);
+            }
+        }
+    );
 }
 
 function Delete(ID) {
-    $.ajax();
+    let answer = confirm("정말 삭제하시겠습니까?");
+    if (answer) {
+        $.ajax(
+            {
+                url: "/Home/Delete/"+ID,   // 서버쪽에 요청
+                type: 'POST',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    loadData(); // 다시 비동기 조회 함수 호출
+                },
+                error: function (errmsg) {
+                    alert(errmsg.responseText);
+                }
+            }
+        );
+    }
 }
 
 function clearTextBox() {

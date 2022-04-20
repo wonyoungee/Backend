@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp", "MyApp\MyApp.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVCAjax", "WebMVCAjax\WebMVCAjax.csproj", "{02C07764-6008-4409-950C-DD54CFA2BFAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW_Emp_CRUD", "HW_Emp_CRUD\HW_Emp_CRUD.csproj", "{E1DB29A4-7F25-40E4-A208-17DAD099838B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{02C07764-6008-4409-950C-DD54CFA2BFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02C07764-6008-4409-950C-DD54CFA2BFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02C07764-6008-4409-950C-DD54CFA2BFAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1DB29A4-7F25-40E4-A208-17DAD099838B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DB29A4-7F25-40E4-A208-17DAD099838B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DB29A4-7F25-40E4-A208-17DAD099838B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DB29A4-7F25-40E4-A208-17DAD099838B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -64,12 +64,35 @@ namespace WebMVCAjax.Models
 
         public int Update(Employee emp)
         {
-            return 0;
+            int returnvalue = 0;
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand("InsertUPdateEmployee", conn);
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@id", emp.EmployeeID); //procedure  insert or  update 
+                comm.Parameters.AddWithValue("@Name", emp.Name);
+                comm.Parameters.AddWithValue("@Age", emp.Age);
+                comm.Parameters.AddWithValue("@State", emp.State);
+                comm.Parameters.AddWithValue("@Country", emp.Country);
+                comm.Parameters.AddWithValue("@Action", "update");
+                returnvalue = comm.ExecuteNonQuery();
+            }
+            return returnvalue;
         }
 
         public int Delete(int ID)
         {
-            return 0;
+            int returnvalue = 0;
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand("deleteEmployee", conn);
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@id", ID); //procedure  insert or  update 
+                returnvalue = comm.ExecuteNonQuery();
+            }
+            return returnvalue;
         }
     }
 }
