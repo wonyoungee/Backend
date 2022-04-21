@@ -1,0 +1,83 @@
+﻿@using HW_Dept_Emp.Models
+
+@{ 
+    List<Dept> deptlist = ViewBag.DeptList;
+}
+
+    <div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="~/Scripts/Dept.js"></script>
+
+    <div class="row">
+        <div class="container">
+            <h2>Dept Record</h2>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Deptno
+                        </th>
+                        <th>
+                            Dname
+                        </th>
+                        <th>
+                            Loc
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in deptlist)
+                    {
+                        <tr>
+                            <td>
+                                <p>
+                                    <button type="button" class="btn btn-link" onclick="return EmpList(@item.Deptno);">@item.Deptno</button>
+                                </p>
+                            </td>
+                            <td>@item.Dname</td>
+                            <td>@item.Loc</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <h2>Emp Record</h2>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Empno
+                        </th>
+                        <th>
+                            Ename
+                        </th>
+                        <th>
+                            Job
+                        </th>
+                        <th>
+                            Mgr
+                        </th>
+                        <th>
+                            Hiredate
+                        </th>
+                        <th>
+                            Sal
+                        </th>
+                        <th>
+                            Comm
+                        </th>
+                        <th>
+                            Deptno
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
